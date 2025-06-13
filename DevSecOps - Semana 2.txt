@@ -1,0 +1,14 @@
+﻿* Diferencie CI, CD e Deploy Contínuo
+   * A integração contínua diz respeito principalmente ao processo de desenvolvimento e possui relação direta com as branches. A ideia da integração contínua é fazer commits curtos e simples de maneira rápida, reduzindo os conflitos e aumentando a eficiência. Já a entrega contínua diz respeito ao processo de esteira e à entrega de código pronto para a produção. A principal diferença entre CD (delivery) e CD (deployment) é justo nessa parte da produção: no delivery, a etapa de colocar o código em produção é manual e depende de aprovação humana. Já no deploy, esse processo é feito automaticamente.
+
+
+
+
+* Explique o pipeline de entrega
+   * O pipeline de entrega é uma forma de automatizar o processo de deploy da empresa. Nesse pipeline são adicionados os chamados “jobs”, que realizam as tarefas necessárias para lançamento correto do código, como build, testes, verificações de segurança, etc. Esse pipeline é executado a cada commit realizado e facilita o feedback para a equipe
+
+
+
+
+* Cite ao menos um padrão de release e sua utilidade
+   * O padrão blue/green funciona da seguinte forma: são mantidas abertas para o público duas versões funcionais do código, sendo uma delas mais recente (com alguma feature nova ou melhoria). Então, gradualmente, os usuários vão sendo migrados de uma versão para a outra, e eventualmente todos passam a utilizar a versão nova. Esse processo serve para evitar que o serviço fique indisponível e possibilita um retorno mais fácil para a versão antiga, em caso de algum problema.
