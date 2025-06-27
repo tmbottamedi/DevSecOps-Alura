@@ -34,7 +34,14 @@ pacienteRouter.get(
     .isString()
     .withMessage("O campo de busca deve ser um texto.")
     .isLength({ min: 2, max: 80 })
-    .withMessage("A busca deve ter entre 2 e 80 caracteres."),
+    .withMessage("A busca deve ter entre 2 e 80 caracteres.")
+    .custom((value) => {
+      const patterns = /--|[;=<>]/;
+      if (patterns.test(value)) {
+        throw new Error("A busca contém caracteres não permitidos.");
+      }
+      return true;
+    }),
   consultaPorPaciente
 );
 pacienteRouter.post("/", criarPaciente);
