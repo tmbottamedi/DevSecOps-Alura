@@ -18,7 +18,7 @@ export const consultaPorPaciente = async (
 ): Promise<void> => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    res.status(400).json({ errors: errors.array() });
+    res.status(400).json({ errors: errors.array().map((error) => error.msg) });
     return;
   }
   const { userInput } = req.query;
